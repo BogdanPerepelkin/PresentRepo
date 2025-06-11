@@ -1,0 +1,331 @@
+\documentclass[12pt]{article}  
+\usepackage{ucs} 
+\usepackage[utf8x]{inputenc} 
+\usepackage[russian]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[a4paper, left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry}
+\title{\LaTeX}  
+\date{}  
+\author{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{green!50!black},
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  breaklines=true,
+  frame=single,
+}
+
+\begin{document}  
+
+\title{}
+ДЗ-10 Перепелкин Богдан, М3135
+
+\section{10.1}
+
+Условие: Дан пустой граф на n вершин. Надо уметь за обратную функцию Аккермана
+
+a) добавлять ребро в граф
+
+b) находить число ребер в компоненте связности, где лежит x
+
+Решение: будем использовать систему непересекающихся подмножеств (СМН), будем
+поддерживать 4 операции: 
+\begin{itemize}
+    \item \texttt{find} (н-ти представителя)
+    \item \texttt{union} (объединить две вершины)
+    \item \texttt{count\_edges} (посчитать кол-во рёбер в множестве, где лежит текущая вершина)
+    \item \texttt{add\_edge} (создать ребро)
+\end{itemize}
+
+Описание структуры данных:
+\begin{enumerate}
+    \item \texttt{массив parents} (для каждого элемента ссылка на его родителя)
+Изначально каждый элемент является своим родителем. Используем сжатие путей.
+    \item \texttt{массив ranks} (для каждого корня хранится глубина снм).
+Изначально все ранги = 0.
+    \item \texttt{массив edges} (для каждого корня хранится кол-во ребер в смн)
+Изначально у всех элементов по 0 ребер в их деревьях.
+\end{enumerate}
+
+Функции:
+\begin{enumerate}
+    \item find(v)
+\begin{lstlisting}
+def find(v):
+    if parents[v] == v:
+        return v
+    parents[v] = find(parents[v])
+    return parents[v]
+\end{lstlisting}
+    \item union(a,b)
+\begin{lstlisting}
+def union(a,b):
+    a = find(a)
+    b = find(b)
+    if ranks[a] > ranks[b]:
+        swap(a,b)
+    if ranks[a] == ranks[b]:
+        ranks[b]++
+    if a != b:
+        parents[a] = b
+        edges[b] += edges[a]
+    edges[b] += 1
+\end{lstlisting}
+    \item count\_edges(v)
+\begin{lstlisting}
+def count_edges(v):
+    v = find(v)
+    return edges[v]
+\end{lstlisting}
+    \item add\_edge
+\begin{lstlisting}
+def add_edge(a,b):
+    union(a,b)
+\end{lstlisting}
+\end{enumerate}
+
+Доказательство сложности обратной функции Аккермана: в функциях union и count\_edges используется find и остальные операции за O(1). Тогда достаточно доказать, что find работает за Аккермана. Это верно, так как используется сжатие путей.
+
+Это работает, так как мы храним количество ребер не зависимо от того, как связаны элементы со своим корнем. То есть достигается и сложность обратной функции Аккермана, и возможность валидно хранить количество ребер в каждой компоненте. Во всех следующих задачах доказательство сложности аналогичное.
+
+\section{10.2}
+Условие: необходимо поддерживать стркутуру с массивом из нулей и едениц, в которой все операции, описанные ниже будут работать за обратную от функции Аккермана.
+\begin{itemize}
+    \item присвоить 1 i-му элементу
+    \item найти ближайший ноль к i-му элементу массива
+\end{itemize}
+
+Структура данных:
+\begin{enumerate}
+    \item массив a, хранит нули и единицы 
+    \item массив rank - такой же как в номере 10.1
+    \item массив parents хранит подмассив для каждого элемента, где 
+    \begin{itemize}
+        \item родитель на 0 индексе
+        \item ближайший ноль слева на 1 индексе
+        \item ближайший ноль справа на 2 индексе
+    \end{itemize}
+    
+    Изначально хранит, что каждый элемент сам себе родитель и ближайший ноль слева, справа это сам элемент. Затем будем объединять в одну компоненту непрерывные последовательности из 1. Функция find такая же, как в номере 10.1 (она будет работать за обратную функцию Аккермана)
+\end{enumerate}
+\begin{enumerate}
+    \item init\_one(i) Данная функция будет присваивать единицу и при необходимости объединять эту единицу в соседние компоненты.
+    \begin{lstlisting}
+def init_one(i):
+    a[i] = 1
+    #union with left
+    if a[i - 1] == 1:
+        left = find(i - 1)
+        parents[i][0] = left
+        parents[left][2] = i
+        if ranks[left] == ranks[i]: ranks[left]++ #two lonely "1" merged
+    else:
+        parents[i][1] = i - 1
+    #union with right
+    cur = find(i) #not just i, because we could merge with left on step before
+    if a[i + 1] == 1:
+        right = find(i + 1)
+        if ranks[cur] > ranks[right]:
+            swap(cur, right)
+        parents[cur][0] = right
+        parents[right][1] = parents[cur][1] #give cur's left zero to right's left zero 
+    else:
+        parents[cur][2] = i + 1
+    \end{lstlisting}
+
+Очевидно как сделать обработку граничных положений - сделать нули слева, справа от массива a и в конце union заифать на выход за пределы длины a. Не стал писать, ибо код и так получился довольно громоздким.
+
+    \item closest\_zero(i)
+    \begin{lstlisting}
+def closest_zero(i):
+    cur = find(i)
+    if abs(parents[cur][1] - i) < abs(parents[cur][2] - i):
+        return parents[cur][1]
+    else:
+        return parents[cur][2]
+    \end{lstlisting}
+\end{enumerate}
+
+Это работает, потому что всегда сохраняеся инвариант - для каждой компоненты знаем ближайший ноль слева, справа
+
+\section{10.3}
+Условие: на пустом графе надо уметь добавлять ребра, находить число компонент связности, являющихся деревьями.
+
+Реализация: проверка на то, дерево или нет компонента, происходит по следующей формуле. Дерево, если граф связен и p = q + 1, где p - количество вершин, q - количество ребер.
+
+Почему это работает?
+
+Потому что на wiki конспектах это условие, описанное выше эквивалентно тому, что рассматриваемая компонента - дерево. При этом проверка на p = q + 1 валидна благодаря поддерживаемым массивам size и edges, и она происходит только с элементами в одной компоненте, то есть между любой парой вершин есть хотя бы одна связь, следовательно компонента - связна.
+
+Структура данных:
+\begin{enumerate}
+    \item \texttt{массив parents} 
+    вместе с функцией find такие же как и в 1 задании
+    \item \texttt{массив size} (для каждого корня хранится кол-во элементов в его компоненте)
+    
+    изначально все = 1 (т.к. один элемент есть)
+    
+    \item \texttt{массив edges} (для каждого корня хранятся кол-во ребер в его компоненте)
+    
+    изначально все = 0  (т.к. пока что нет ребер)
+    
+    \item \texttt{массив isTree} (для каждого корня хранятся является ли он деревом)
+    
+    изначально все = 1 (т.к. один элемент - это дерево)
+\end{enumerate}
+
+Функции:
+\begin{enumerate}
+    \item find(v) - аналогично номеру 10.1
+    \item union(a,b) - добавить ребро в граф
+\begin{lstlisting}
+def union(a,b):
+    a = find(a)
+    b = find(b)
+    if ranks[a] > ranks[b]:
+        swap(a,b)
+    if ranks[a] == ranks[b]:
+        ranks[b]++
+    if a != b:
+        parents[a] = b
+        edges[b] += edges[a]
+        size[b] += size[a]
+    edges[b] += 1
+    if (isTree[a] and isTree[b] and size[b] - edges[b] == 1):
+        isTree[b] = 1
+    else:
+        isTree[b] = 0
+\end{lstlisting}
+\item count\_trees()
+\begin{lstlisting}
+def count_trees():
+    cnt = 0
+    used = []
+    for i in range(len(parents)):
+        parent = find(i)
+        if i == parent and parent not in used:
+            if isTree[i] == 1:
+                cnt++
+        used.add(parent)
+    return cnt
+\end{lstlisting}
+    \item add\_edge(v), find(v) (аналогично как в пункте 10.1)
+\end{enumerate}
+
+Модифицировали union, чтобы обновлять информацию о том, является ли компонента деревом. Это позволило сделать функцию count\_trees, подсчитывающую число компонент связности, являющихся деревьями
+
+\section{10.4}
+Условие: на пустом графе необходимо уметь выполнять запросы двух типов (вермя работы - обратная ф-я Аккермана)
+\begin{itemize}
+    \item добавить ребро в граф
+    \item найти кол-во компонент связности, являющихся циклами
+\end{itemize}
+
+Идея аналогичная той, что в номере 10.3, но немного с дополнениями. Сложность заключается в том, что формально компонента является циклом, если в ней количество элементов равно количеству ребер и каждая компонента связана с двумя другими. Будем это поддерживать, используя массив cheldren. Таким образом возможно корректно подсчитывать циклы, проверя на при каждом union, что у элементов, которые мы обновили есть ровно две связи.
+
+Структура данных:
+\begin{enumerate}
+    \item \texttt{массив parents} 
+    \item \texttt{массив size} хранит размер каждой компоненты
+    \item \texttt{массив edge} хранит кол-во ребер в компонентах
+    \item \texttt{массив children} хранит кол-во связей у каждого элемента. Изначально у всех нули
+    \item \texttt{массив isCycle} хранит true/false 
+    \item \texttt{переменная cnt} хранит ответ на вопрос о кол-ве циклов
+\end{enumerate}
+
+Функции:
+\begin{enumerate}
+    \item find(v) - со сжатием путей
+    \item union(a,b) - добавить ребро в граф
+    \begin{lstlisting}
+def union(a,b):
+    root_a = find(a)
+    root_b = find(b)
+    if size[root_a] > size[root_b]:
+        swap(a,b)
+    children[a] +=1
+    children[b] +=1
+    if root_a != root_b:
+        parents[root_a] = root_b
+        size[root_b] += size[root_a]
+        edge[root_b] += edge[root_a] + 1
+    else:
+        edge[root_b] += 1
+    
+    # checking for creating cycle
+    if size[root_b] == edge[root_b] and children[a] == 2 and children[b] == 2:
+        isCycle[root_b] = true
+        cnt++
+    else:
+        isCycle[root_b] = false
+        cnt--
+    \end{lstlisting}   
+    \item count\_cycles()
+    \begin{lstlisting}
+def count_cycles():
+    return cnt
+    \end{lstlisting}
+\end{enumerate}
+\section{10.5}
+Условие: требуется добавить в СНМ 2 опреации:
+\begin{itemize}
+    \item Увеличить веса всех элементов, находящихся в одном множестве с элементом x, на d.
+    \item Найти вес элемента x.
+\end{itemize}
+
+Реализация: сложность заключается в том, что это нужно сделать ассимптотически за обратную функцию Аккермана. Для этого модифицируем алгоритм сжатия путей, чтобы прокидывать сдвиг по весам вместе с перекидыванием элементов к родителям повыше.
+
+Структура данных:
+\begin{enumerate}
+    \item Пусть w - массив с весами
+    \item shift - сдвиги по весам
+    \item rank - обычные ранги как до этого
+    \item массив parents - ссылки на родителей
+\end{enumerate}
+
+Функции:
+\begin{enumerate}
+    \item find(v)
+    \begin{lstlisting}
+def find(v):
+    if parents[v] != v:
+        root = find(parents[v])
+        # transfer shift for weights at old parent to new parent
+        w[v] += sift[parents[v]]
+        shift[parents[v]] = 0
+        parents[v] = root
+    return parents[v]
+    \end{lstlisting}
+    \item union(a,b)
+    \begin{lstlisting}
+def union(a,b):
+    root_a = find(a)
+    root_b = find(b)
+    if rank[root_a] > rank[root_b]:
+        swap(root_a, root_b)
+    if rank[root_a] == rank[root_b]:
+        rank[root_b] ++
+    if root_a != root_b:
+        parents[root_a] = root_b
+    \end{lstlisting}
+    \item increase(v, d)
+    \begin{lstlisting}
+def increase(v, d):
+    root = find(v)
+    shift[root] += d
+    \end{lstlisting}
+    \item count\_weight(v)
+    \begin{lstlisting}
+def count_weight(v):
+    root = find(v)
+    return w[v] + shift[root]
+    \end{lstlisting}    
+\end{enumerate}
+\end{document}

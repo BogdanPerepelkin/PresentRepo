@@ -1,0 +1,3 @@
+C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace/cmake-build-debug/CMakeFiles/workspace.dir
+C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-debug-system-llvm/CMakeFiles/Pr_Clion.dir
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-debug-system-llvm/CMakeFiles/edit_cache.dir
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-debug-system-llvm/CMakeFiles/rebuild_cache.dir

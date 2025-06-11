@@ -1,0 +1,1 @@
+javac SumFloatPunct.java && java -ea -jar SumTest.jar FloatPunct

@@ -1,0 +1,1 @@
+javac Reverse.java && javac ReverseMaxOct.java && javac Scanner.java && java -Xmx1g -ea -jar FastReverseTest.jar MaxOct

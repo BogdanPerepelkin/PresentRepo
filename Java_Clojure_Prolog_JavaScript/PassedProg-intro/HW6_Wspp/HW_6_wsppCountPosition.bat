@@ -1,0 +1,1 @@
+javac Wspp.java && javac WsppCountPosition.java && javac Scanner.java && java -Xmx1g -ea -jar WsppTest.jar CountPosition

@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Pr_Clion",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "7_BFF.exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-7_BFF.exe-Release-57edb8305037739a88a0.json",
+					"name" : "7_BFF.exe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Stars_5.exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Stars_5.exe-Release-75fc47487c588e2f122e.json",
+					"name" : "Stars_5.exe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "task_3_swapper_already_dead.exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-task_3_swapper_already_dead.exe-Release-a497b14f3adf39db8478.json",
+					"name" : "task_3_swapper_already_dead.exe",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "task_4_kill_me.exe::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-task_4_kill_me.exe-Release-5924765cf1b720cb008e.json",
+					"name" : "task_4_kill_me.exe",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang",
+		"source" : "C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "MSVC",
+	"config" : "Release",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang",
+	"dir-cur-src" : "C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion",
+	"dir-top-bld" : "C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang",
+	"dir-top-src" : "C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang/CMakeFiles/Pr_Clion.dir"
+}

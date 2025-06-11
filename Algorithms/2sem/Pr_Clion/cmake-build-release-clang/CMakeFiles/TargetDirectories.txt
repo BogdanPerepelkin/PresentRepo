@@ -1,0 +1,6 @@
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang/CMakeFiles/task_4_kill_me.exe.dir
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang/CMakeFiles/task_3_swapper_already_dead.exe.dir
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang/CMakeFiles/Stars_5.exe.dir
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang/CMakeFiles/7_BFF.exe.dir
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang/CMakeFiles/edit_cache.dir
+C:/my_folders/CT_dance/AlgoDS/2sem/Pr_Clion/cmake-build-release-clang/CMakeFiles/rebuild_cache.dir

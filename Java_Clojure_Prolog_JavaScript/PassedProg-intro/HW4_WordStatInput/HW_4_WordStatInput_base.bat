@@ -1,0 +1,1 @@
+javac WordStatInput.java && javac WordStatWordsPrefix.java && java -ea -jar WordStatTest.jar WordsPrefix

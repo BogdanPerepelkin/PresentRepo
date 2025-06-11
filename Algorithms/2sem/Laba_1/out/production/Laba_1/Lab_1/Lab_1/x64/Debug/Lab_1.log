@@ -1,0 +1,4 @@
+﻿  task7.cpp
+C:\my_folders\CT_dance\AlgoDS\2sem\Laba_1\Lab_1\Lab_1\task7.cpp(45,6): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+task7.obj : error LNK2005: main уже определен в task1.obj
+C:\my_folders\CT_dance\AlgoDS\2sem\Laba_1\Lab_1\x64\Debug\Lab_1.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более

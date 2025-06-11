@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc} 
+\usepackage[russian]{babel}
+\usepackage{amsfonts} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry} 
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{stackrel}
+\usepackage{xcolor} 
+\usepackage{yhmath}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{ %
+    language=Python,                    % язык
+    backgroundcolor=\color{white},      % цвет фона
+    basicstyle=\ttfamily,               % шрифт для кода
+    keywordstyle=\color{blue},          % стиль ключевых слов
+    commentstyle=\color{gray},          % стиль комментариев
+    stringstyle=\color{red},            % стиль строк
+    numberstyle=\tiny\color{gray},      % стиль номеров строк
+    frame=single,                       % рамка вокруг кода
+    rulecolor=\color{black},            % цвет рамки
+    breaklines=true,                    % перенос строк
+    captionpos=b                        % подпись снизу
+}
+
+\begin{document}
+\title{ДЗ5}
+\author{Богдан Перепелкин}
+\maketitle
+\section{Task 1}
+Если Петя выбросит n единиц из 10 бросков, то и Вася должен выбросить n единиц из 10:
+
+$P(n) = \left(\dfrac{C_{10}^{n}}{2^{10}}\right)^2$
+
+Теперь нужно просуммировать вероятности для каждого возможного значения n:
+
+Ответ - $\sum_{n = 1}^{10} P(n) = \sum_{n = 1}^{10} \left(\dfrac{C_{10}^{n}}{2^{10}}\right)^2$
+
+\section{Task 2}
+Если количество нулей и едениц должно быть одинаковым при 20 монетах, то количество едениц = 10 и количество нулей = 10.
+
+Удачные случаи - количество, которым можно вытащить 10 монет из 20
+
+Все случаи - $2^{20}$
+
+Тогда ответ = $ \dfrac{C_{20}^{10}}{2^{20}} $
+
+\section{Task 3}
+
+Если $P(A \cap B \cap C) = P(A)P(B)P(C)$ и нужно, чтобы события не были попарно независимыми, то придумаем такое множество элементов и событий A, B, C над ним, чтобы эти условия выполнялись.
+
+События A, B, C - это соответсвенно элемент, который достали, является кратным 2, 3, 5.
+
+Множество будет содержать один элемент удовлетворяющий всем 3 событиям - число 30, x элементов, не удовлетворяющих никакому событию - простые числа. И будет содержать по n чисел удовлетворяющих только одному событию (то есть суммарно 3n) - степени 2, степени 3, степени 5.
+
+Найдем такие числа n и x, используя формулу из условия, переписанную под наши обозначения: $\left(\dfrac{n + 1}{3n + x + 1}\right)^3 = \dfrac{1}{3n + x + 1}$.
+Для упрощения счета напишем программу на языке python:
+
+\begin{lstlisting}
+def func(n, x):
+    a1 = ((3 * n + x + 1) / (n + 1))
+    if a1 == int(a1):
+        return a1 ** 3
+    else:
+        return -1
+
+for n in range(1000):
+    for x in range(1000):
+        a1 = func(n, x)
+        if a1 != -1:
+            if a1 == 3 * n + x + 1:
+                print(n, x)
+\end{lstlisting}
+
+Одна из пар чисел в выводе программы - (n = 8, x = 2).
+
+То есть множество выглядит так: $M = \{ 30, 7, 17, 2^1 \dots 2^8, 3^1 \dots 3^8, 5^1 \dots 5^8 \} $
+
+Проверим, что события не попарно независимы. Возьмем пару A и B:
+Если они независимы, то $P(A \cap B) = P(A)P(B)$. В нашем случае $P(A \cap B) = \dfrac{1}{27}$, а $P(A)P(B) = \dfrac{1}{3} * \dfrac{1}{3} = \dfrac{1}{9}$. Следовательно события A и B не являются независимыми. Аналогично можно доаказать для всех остальных пар.
+
+\section{Task 4}
+
+$ 1 , \left(\dfrac{3}{2}\right)^2 , n^{\dfrac{1}{\log{n}}} , \sqrt{\log n} , \log (\log {n}) , \sqrt{2}^{\log n} , \log^2 n , n, 2^{\log n} , 4^{\log n} , \log (n!) , n\log n, n^2, n^3, (\log n)^{\log n} , n^{\log (\log n)} , (\log n)! , n * 2^n , e^n , 2^{2n + 1} , n! , (n + 1)! , 2^{2^n} $ 
+
+
+\end{document}

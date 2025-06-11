@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="63bafe9d-8316-4bec-a472-950e9edacbb9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp.vcxproj.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/Edu_cpp.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/link-cvtres.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/link-cvtres.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/link-rc.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/link-rc.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/link.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/link.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/link.read.2.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/link.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Edu_cpp.tlog/unsuccessfulbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/Test.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/vc143.idb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Edu_cpp/x64/Debug/vc143.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/Test.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Edu_cpp/x64/Debug/Edu_cpp.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/YAP.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/YAP.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/YAP.vcxproj.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/nom1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.exe.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.ilk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/Cl.items.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/YAP.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/link.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/link.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/link.secondary.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/YAP.tlog/link.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/nom1.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/vc143.idb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/YAP/x64/Debug/vc143.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/x64/Debug/YAP.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAP/x64/Debug/YAP.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/nomer_1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/pr3.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/pr3.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/pr3.vcxproj.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/x64/Debug/pr3.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/x64/Debug/pr3.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/x64/Debug/pr3.tlog/pr3.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/x64/Debug/pr3.tlog/unsuccessfulbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/x64/Debug/vc143.idb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pr3/pr3/x64/Debug/vc143.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ДЗ/algo_4_боталка.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ДЗ/algo_4_боталка.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/cmake-build-debug-system-llvm/CMakeFiles/clion-Debug-System-LLVM-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/cmake-build-debug-system-llvm/CMakeFiles/clion-Debug-System-LLVM-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/launch.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/unformated_sum.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../CPlusPlus/ProjectC/unformated_sum.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/out/production/Paradigms/QueueTest.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programming/Paradigms/out/production/Paradigms/QueueTest.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/QueueTest.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programming/Paradigms/src/QueueTest.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/AbstractQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/AbstractQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/ArrayQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/ArrayQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/LinkedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/LinkedQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/QueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/arrayStack/ArrayStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/arrayStack/ArrayStackADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/arrayStack/ArrayStackADTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/arrayStack/ArrayStackModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/arrayStack/ArrayStackModuleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/arrayStack/ArrayStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/ownTests/OwnTestArrayQueueADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programming/Paradigms/src/queue/ownTests/OwnTestArrayQueueADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Testing/1 ревью_Богдан.xodt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2tx3yTRB0HDjDfEaXQOTg7SEtiO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/my_folders/CT_dance/AlgoDS/2sem/lab_2",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63bafe9d-8316-4bec-a472-950e9edacbb9" name="Changes" comment="" />
+      <created>1741280156767</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741280156767</updated>
+      <workItem from="1741280158098" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

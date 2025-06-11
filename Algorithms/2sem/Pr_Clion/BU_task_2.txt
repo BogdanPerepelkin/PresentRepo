@@ -1,0 +1,195 @@
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <climits>
+
+using namespace std;
+
+vector<int> stock;
+
+struct node {
+    int key, prior, size, min;
+    bool reverse;
+    node *l, *r;
+    node (int curkey) {
+        reverse = false;
+        key = curkey;
+        min = curkey;
+        prior = rand();
+        l = nullptr;
+        r = nullptr;
+        size = 1;
+    }
+};
+
+typedef pair<node*, node*> Pair;
+
+int getSize(node* v) {
+    return v ? v->size : 0;
+}
+
+int getMin(node* v) {
+    return v ? v->min : INT_MAX;
+}
+
+void upd(node* v) {
+    v->size = getSize(v->l) + getSize(v->r) + 1;
+    v->min = min(getMin(v->l), min(getMin(v->r), v->key));
+}
+
+void push(node *v) {
+    if (v->reverse) {
+        swap(v->l, v->r);
+        if (v->l) {
+            v->l->reverse = true;
+        }
+        if (v->r) {
+            v->r->reverse = true;
+        }
+    }
+    v->reverse = false;
+}
+
+node* merge(node *l, node *r) {
+    if (l == nullptr) {
+        return r;
+    }
+    if (r == nullptr) {
+        return l;
+    }
+    push(l);
+    push(r);
+    if (l->prior > r->prior) {
+        l->r = merge(l->r, r);
+        upd(l);
+        return l;
+    }
+    r->l = merge(l, r->l);
+    upd(r);
+    return r;
+}
+
+Pair split(node *root, int k) {
+    if (!root) {
+        return {nullptr, nullptr};
+    }
+    push(root);
+    int leftSize = getSize(root->l);
+    if (leftSize <= k) {
+        Pair cur = split(root->r, k - leftSize - 1);
+        root->r = cur.first;
+        upd(root);
+        return {root, cur.second};
+    } else if (leftSize > k) {
+        Pair cur = split(root->l, k);
+        root->l = cur.second;
+        upd(root);
+        return {cur.first, root};
+    }
+}
+
+// DEBUG
+void printTree(node* root) {
+    if (!root) return;
+    push(root);  // Обязательно применяем отложенные операции перед обходом
+    printf("left");
+    printTree(root->l);
+    cout << "root: (" << root->key << " " << root->min << ")" << " \n";  // Вывод ключа узла
+    printf("right");
+    printTree(root->r);
+    cout << endl;
+    printf("up");
+}
+
+void insert(node *&root, int x) {
+    Pair pair = split(root, x);
+    node *newNode = new node(x);
+    root = merge(pair.first, merge(newNode, pair.second));
+}
+
+void reverse(node *root, int l, int r) {
+    Pair rightCut = split(root, r);
+    Pair leftCut = split(rightCut.first, l);
+    if (leftCut.second) {
+        leftCut.second->reverse = true;
+    }
+    root = merge(leftCut.first, merge(leftCut.second, rightCut.second));
+}
+
+int minimum(node *root, int l, int r) {
+    Pair rightCut = split(root, r);
+    Pair leftCut = split(rightCut.first, l);
+    printf("left\n");
+    printTree(leftCut.first);
+    printf("middle\n");
+    printTree(leftCut.second);
+    printf("right\n");
+    printTree(rightCut.second);
+
+    int result = getMin(leftCut.second);
+    root = merge(leftCut.first, merge(leftCut.second, rightCut.second));
+    return result;
+}
+
+
+
+int main(int argc, char** argv) {
+    ifstream infile(argv[1]);
+    if (!infile) {
+        cerr << "Error opening file" << endl;
+        return 1;
+    }
+    int n, m;
+    infile >> n >> m;
+    stock.resize(n);
+
+    for (int i = 0; i < n; i++) {
+        infile >> stock[i];
+    }
+
+    // DEBUG
+    printf("stock\n");
+    for (int i = 0; i < n; i++) {
+        cout << stock[i] << " ";
+    }
+    cout << endl << endl;
+
+    vector<vector<int>> req(m);
+    for (int i = 0; i < m; i++) {
+        int type, l, r;
+        infile >> type >> l >> r;
+        req[i] = {type, l, r};
+    }
+
+    node* root = nullptr;
+    printTree(root);
+    printf("===============================\n");
+    for (int i = 0; i < n; i++) {
+        insert(root, stock[i]);
+        printTree(root);
+        printf("==================================\n");
+    }
+
+    // DEBUG
+    printf("req\n");
+    for (int i = 0; i < m; i++) {
+        cout << req[i][0] << " " << req[i][1] << " " << req[i][2] << endl;
+    }
+    cout << endl;
+
+    // DEBUG
+    printf("pivo\n");
+    printTree(root);
+    printf("\n");
+
+    printf("result\n");
+    for (int i = 0; i < m; i++) {
+        if (req[i][0] == 1) {
+            reverse(root, req[i][1], req[i][2]);
+        } else {
+            cout << minimum(root, req[i][1], req[i][2]) << endl;
+        }
+    }
+
+    return 0;
+}

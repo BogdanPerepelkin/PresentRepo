@@ -1,0 +1,1 @@
+javac Reverse.java && javac ReverseTransp.java && java -ea -jar ReverseTest.jar Transpose

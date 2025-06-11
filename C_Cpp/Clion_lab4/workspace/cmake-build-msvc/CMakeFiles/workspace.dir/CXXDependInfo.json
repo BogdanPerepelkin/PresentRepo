@@ -1,0 +1,27 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace/cmake-build-msvc",
+	"dir-cur-src" : "C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace",
+	"dir-top-bld" : "C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace/cmake-build-msvc",
+	"dir-top-src" : "C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace/cmake-build-msvc/CMakeFiles/workspace.dir",
+	"sources" : 
+	{
+		"CMakeFiles/workspace.dir/main.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/my_folders/CT_dance/CPlusPlus/Clion_lab4/workspace/main.cpp"
+		}
+	}
+}
